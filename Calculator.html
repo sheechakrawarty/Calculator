@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="Calculator.css">
+</head>
+<body>
+    <div class = "box">
+        <h1 id="heading">Calculator</h1>
+        <div class="ipbox">
+            <div class = "buttons">
+                <button name="1" value="1" class=" button" onclick="
+                    calculation += 1;
+                    console.log(calculation);
+                "
+                >1</button>
+                <button name="2" value="2" class=" button" onclick="calculation+=2;">2</button>
+                <button name="3" value="3" class=" button" onclick="calculation+=3">3</button>
+                <button name="+" value="+" class=" button" onclick="calculation+='+'">+</button><br>
+                <button name="4" value="4" class=" button" onclick="calculation+=4">4</button>
+                <button name="5" value="5" class=" button" onclick="calculation+=5">5</button>
+                <button name="6" value="6" class=" button" onclick="calculation+=6">6</button>
+                <button name="-" value="-" class=" button" onclick="calculation+='-'">-</button><br>
+                <button name="7" value="7" class=" button" onclick="calculation+=7">7</button>
+                <button name="8" value="8" class=" button" onclick="calculation+=8">8</button>
+                <button name="9" value="9" class=" button" onclick="calculation+=9">9</button>
+                <button name="*" value="*" class=" button" onclick="calculation+='*'">*</button><br>
+                <button name="0" value="0" class=" button" onclick="calculation+=0">0</button>
+                <button name="/" value="/" class=" button" onclick="calculation+='/'">/</button>
+                <button name="=" value="" class=" button equalBut">=</button>
+                <button name="clear" value="11" class=" button" onclick="calculation = ''; res.innerText = '0';">clear</button>
+            </div>
+        </div>
+    </div>
+    <div class="box2">
+        <div class="numrs"> enter calculations</div>
+        <div class="result">ans</div>
+    </div>
+
+    <script>
+        let calculation = '';
+        let cal = document.querySelector(".numrs");
+        let buttons = document.querySelectorAll(".button")
+        let eq = document.querySelector(".equalBut");
+        let res = document.querySelector(".result");
+
+        eq.addEventListener("click",()=>{
+            res.innerText = eval(calculation);
+        })
+        
+        buttons.forEach((box) =>{
+            box.addEventListener("click",()=>{
+                cal.innerText = calculation;
+                
+            })
+        });
+        
+        
+    </script>
+</body>
+</html>
